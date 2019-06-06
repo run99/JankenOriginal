@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressBar playerHp, cpuHp;
 
-    int pHp = 5;
-    int cHp = 5;
+    int playerHpInt = 5;
+    int computerHpInt = 5;
 
 
 
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
         playerHp = (ProgressBar)findViewById(R.id.playerHp);
         cpuHp = (ProgressBar)findViewById(R.id.cpuHp);
 
-        pHp = 5;
-        cHp = 5;
+        playerHpInt = 5;
+        computerHpInt = 5;
 
-        playerHp.setProgress(pHp);
-        cpuHp.setProgress(cHp);
+        playerHp.setProgress(playerHpInt);
+        cpuHp.setProgress(computerHpInt);
     }
 
     //gooを押したときの処理
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         player.setImageResource(R.drawable.goo);
 
         //背景を指定するツール
-        player.setBackgroundResource(R.drawable.shape);
+        //player.setBackgroundResource(R.drawable.shape);
 
 
         //0～２までのランダムの数を取り出す
@@ -67,40 +67,40 @@ public class MainActivity extends AppCompatActivity {
 
         if(random == 0){
             cpu.setImageResource(R.drawable.goo);
-            cpu.setBackgroundResource(R.drawable.shape2);
+            //cpu.setBackgroundResource(R.drawable.shape2);
 
             result.setText("ひきわけ！");
-            result.setTextColor(Color.rgb(255,255,0));
+            result.setTextColor(Color.rgb(255,238,85));
 
             draw = draw + 1;
 
         }else if(random==1){
             cpu.setImageResource(R.drawable.choki);
-            cpu.setBackgroundResource(R.drawable.shape2);
+           // cpu.setBackgroundResource(R.drawable.shape2);
 
             result.setText("かち！");
-            result.setTextColor(Color.rgb(255,0,0));
+            result.setTextColor(Color.rgb(239,73,51));
             win = win + 1;
 
-            cHp = cHp - 1;
+            computerHpInt = computerHpInt - 1;
 
 
         }else if(random==2){
             cpu.setImageResource(R.drawable.paa);
-            cpu.setBackgroundResource(R.drawable.shape3);
+            //cpu.setBackgroundResource(R.drawable.shape3);
 
             result.setText("まけ！");
-            result.setTextColor(Color.rgb(0,0,255));
+            result.setTextColor(Color.rgb(41,171,226));
 
             lose = lose + 1;
 
-            pHp = pHp - 1;
+            playerHpInt = playerHpInt - 1;
 
         }
         playerResult.setText(win + "勝"+lose+"負"+ draw + "分");
 
-        playerHp.setProgress(pHp);
-        cpuHp.setProgress(cHp);
+        playerHp.setProgress(playerHpInt);
+        cpuHp.setProgress(computerHpInt);
 
         reset();
 
@@ -110,48 +110,48 @@ public class MainActivity extends AppCompatActivity {
 
         //playerの手をチョキ
         player.setImageResource(R.drawable.choki);
-        player.setBackgroundResource(R.drawable.shape2);
+        //player.setBackgroundResource(R.drawable.shape2);
 
         //0～２までのランダムの数を取り出す
         int random = r.nextInt(3);
 
         if(random == 0){
             cpu.setImageResource(R.drawable.goo);
-            cpu.setBackgroundResource(R.drawable.shape);
+            //cpu.setBackgroundResource(R.drawable.shape);
 
             result.setText("まけ！");
-            result.setTextColor(Color.rgb(0,0,255));
+            result.setTextColor(Color.rgb(41,171,226));
 
             lose = lose + 1;
 
-            pHp = pHp - 1;
+            playerHpInt = playerHpInt - 1;
 
         }else if(random==1){
             cpu.setImageResource(R.drawable.choki);
-            cpu.setBackgroundResource(R.drawable.shape2);
+            //cpu.setBackgroundResource(R.drawable.shape2);
 
             result.setText("ひきわけ！");
-            result.setTextColor(Color.rgb(255,255,0));
+            result.setTextColor(Color.rgb(255,238,85));
 
             draw = draw + 1;
 
         }else if(random==2){
             cpu.setImageResource(R.drawable.paa);
-            cpu.setBackgroundResource(R.drawable.shape3);
+            //cpu.setBackgroundResource(R.drawable.shape3);
 
             result.setText("かち！");
-            result.setTextColor(Color.rgb(255,0,0));
+            result.setTextColor(Color.rgb(239,73,51));
 
             win = win + 1;
 
-            cHp = cHp - 1;
+            computerHpInt = computerHpInt - 1;
 
         }
 
         playerResult.setText(win + "勝"+lose+"負"+ draw + "分");
 
-        playerHp.setProgress(pHp);
-        cpuHp.setProgress(cHp);
+        playerHp.setProgress(playerHpInt);
+        cpuHp.setProgress(computerHpInt);
 
         reset();
 
@@ -161,36 +161,36 @@ public class MainActivity extends AppCompatActivity {
 
         //playerの手をグパー
         player.setImageResource(R.drawable.paa);
-        player.setBackgroundResource(R.drawable.shape3);
+       // player.setBackgroundResource(R.drawable.shape3);
 
         //0～２までのランダムの数を取り出す
         int random = r.nextInt(3);
 
         if(random == 0){
             cpu.setImageResource(R.drawable.goo);
-            cpu.setBackgroundResource(R.drawable.shape);
+            //cpu.setBackgroundResource(R.drawable.shape);
             result.setText("かち！");
-            result.setTextColor(Color.rgb(255,0,0));
+            result.setTextColor(Color.rgb(239,73,51));
 
             win = win + 1;
 
-            cHp = cHp - 1;
+            computerHpInt = computerHpInt - 1;
 
         }else if(random==1){
             cpu.setImageResource(R.drawable.choki);
-            cpu.setBackgroundResource(R.drawable.shape2);
+            //cpu.setBackgroundResource(R.drawable.shape2);
             result.setText("まけ！");
-            result.setTextColor(Color.rgb(0,0,255));
+            result.setTextColor(Color.rgb(41,171,226));
 
             lose = lose + 1;
 
-            pHp = pHp - 1;
+            playerHpInt = playerHpInt - 1;
 
         }else if(random==2){
             cpu.setImageResource(R.drawable.paa);
-            cpu.setBackgroundResource(R.drawable.shape3);
+            //cpu.setBackgroundResource(R.drawable.shape3);
             result.setText("ひきわけ！");
-            result.setTextColor(Color.rgb(255,255,0));
+            result.setTextColor(Color.rgb(255,238,85));
 
             draw = draw + 1;
 
@@ -198,8 +198,8 @@ public class MainActivity extends AppCompatActivity {
 
         playerResult.setText(win + "勝"+lose+"負"+ draw + "分");
 
-        playerHp.setProgress(pHp);
-        cpuHp.setProgress(cHp);
+        playerHp.setProgress(playerHpInt);
+        cpuHp.setProgress(computerHpInt);
 
         reset();
 
@@ -213,8 +213,8 @@ public class MainActivity extends AppCompatActivity {
             lose = 0;
             draw = 0;
 
-            pHp = 5;
-            cHp = 5;
+            playerHpInt = 5;
+            computerHpInt = 5;
 
 
         }else if (lose == 5){
@@ -224,8 +224,8 @@ public class MainActivity extends AppCompatActivity {
             lose = 0;
             draw = 0;
 
-            pHp = 5;
-            cHp = 5;
+            playerHpInt = 5;
+            computerHpInt = 5;
 
         }
     }
