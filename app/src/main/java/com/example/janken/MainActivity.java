@@ -1,6 +1,9 @@
 package com.example.janken;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +53,28 @@ public class MainActivity extends AppCompatActivity {
 
         playerHp.setProgress(playerHpInt);
         cpuHp.setProgress(computerHpInt);
+
+
+
+        player.setImageResource(R.drawable.goo);
+
+
+        Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.goo);
+
+// 画像の横、縦サイズを取得
+        int imageWidth = bitmap_origin.getWidth();
+        int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+        Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+        matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+        Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+        cpu.setImageBitmap(bitmap_rotate);
     }
 
     //gooを押したときの処理
@@ -66,8 +91,24 @@ public class MainActivity extends AppCompatActivity {
         int random = r.nextInt(3);
 
         if(random == 0){
-            cpu.setImageResource(R.drawable.goo);
-            //cpu.setBackgroundResource(R.drawable.shape2);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.goo);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
+
+
 
             result.setText("ひきわけ！");
             result.setTextColor(Color.rgb(255,238,85));
@@ -75,8 +116,22 @@ public class MainActivity extends AppCompatActivity {
             draw = draw + 1;
 
         }else if(random==1){
-            cpu.setImageResource(R.drawable.choki);
-           // cpu.setBackgroundResource(R.drawable.shape2);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.choki);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
 
             result.setText("かち！");
             result.setTextColor(Color.rgb(239,73,51));
@@ -86,8 +141,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         }else if(random==2){
-            cpu.setImageResource(R.drawable.paa);
-            //cpu.setBackgroundResource(R.drawable.shape3);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.paa);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
 
             result.setText("まけ！");
             result.setTextColor(Color.rgb(41,171,226));
@@ -116,8 +185,22 @@ public class MainActivity extends AppCompatActivity {
         int random = r.nextInt(3);
 
         if(random == 0){
-            cpu.setImageResource(R.drawable.goo);
-            //cpu.setBackgroundResource(R.drawable.shape);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.goo);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
 
             result.setText("まけ！");
             result.setTextColor(Color.rgb(41,171,226));
@@ -127,8 +210,22 @@ public class MainActivity extends AppCompatActivity {
             playerHpInt = playerHpInt - 1;
 
         }else if(random==1){
-            cpu.setImageResource(R.drawable.choki);
-            //cpu.setBackgroundResource(R.drawable.shape2);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.choki);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
 
             result.setText("ひきわけ！");
             result.setTextColor(Color.rgb(255,238,85));
@@ -136,8 +233,22 @@ public class MainActivity extends AppCompatActivity {
             draw = draw + 1;
 
         }else if(random==2){
-            cpu.setImageResource(R.drawable.paa);
-            //cpu.setBackgroundResource(R.drawable.shape3);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.paa);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
 
             result.setText("かち！");
             result.setTextColor(Color.rgb(239,73,51));
@@ -167,8 +278,23 @@ public class MainActivity extends AppCompatActivity {
         int random = r.nextInt(3);
 
         if(random == 0){
-            cpu.setImageResource(R.drawable.goo);
-            //cpu.setBackgroundResource(R.drawable.shape);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.goo);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
+
             result.setText("かち！");
             result.setTextColor(Color.rgb(239,73,51));
 
@@ -177,8 +303,23 @@ public class MainActivity extends AppCompatActivity {
             computerHpInt = computerHpInt - 1;
 
         }else if(random==1){
-            cpu.setImageResource(R.drawable.choki);
-            //cpu.setBackgroundResource(R.drawable.shape2);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.choki);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
+
             result.setText("まけ！");
             result.setTextColor(Color.rgb(41,171,226));
 
@@ -187,8 +328,22 @@ public class MainActivity extends AppCompatActivity {
             playerHpInt = playerHpInt - 1;
 
         }else if(random==2){
-            cpu.setImageResource(R.drawable.paa);
-            //cpu.setBackgroundResource(R.drawable.shape3);
+            Bitmap bitmap_origin = BitmapFactory.decodeResource(getResources(),R.drawable.paa);
+
+// 画像の横、縦サイズを取得
+            int imageWidth = bitmap_origin.getWidth();
+            int imageHeight = bitmap_origin.getHeight();
+
+// Matrix インスタンス生成
+            Matrix matrix = new Matrix();
+
+// 画像を中心に180度回転
+            matrix.setRotate(180, imageWidth/2, imageHeight/2);
+
+// 180度回転したBitmap画像を生成
+            Bitmap bitmap_rotate = Bitmap.createBitmap(bitmap_origin, 0, 0, imageWidth, imageHeight, matrix, true);
+
+            cpu.setImageBitmap(bitmap_rotate);
             result.setText("ひきわけ！");
             result.setTextColor(Color.rgb(255,238,85));
 
